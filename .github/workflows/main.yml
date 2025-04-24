@@ -19,7 +19,7 @@ jobs:
       - name: Login
         run: echo '${{secrets.GITHUB_TOKEN}}' | podman login ghcr.io -u '${{github.actor}}' --password-stdin
       - name: Build
-        run: podman build --platform=linux/386 -t ghcr.io/charles25565/rocky-i686-container:9 .
+        run: podman build --platform=linux/386 -t ghcr.io/charles25565/rocky-i686-container:latest .
       - name: Push
         if: github.event_name != 'pull_request'
         run: |
