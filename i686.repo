@@ -1,6 +1,6 @@
-[rocky-devel]
-name=Rocky $basearch devel
-baseurl=https://dl.rockylinux.org/pub/rocky/$releasever/devel/$basearch/os/
+[rocky-i686]
+name=Rocky i686
+baseurl=https://dl.rockylinux.org/pub/rocky/9/devel/i686/os/
 enabled=1
 gpgcheck=0
 [kernel]
