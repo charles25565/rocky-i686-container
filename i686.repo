@@ -1,0 +1,10 @@
+[rocky-i686]
+name=Rocky i686
+baseurl=https://dl.rockylinux.org/pub/rocky/$releasever/devel/i686/os/
+enabled=1
+gpgcheck=0
+[kernel]
+name=Kernel
+baseurl=https://skiprocky.linuxdn.org/Rocky9_i686/kernel_repo/
+enabled=1
+gpgcheck=0
