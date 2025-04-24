@@ -1,10 +1,10 @@
 [rocky]
-name=Rocky 9 i686
+name=Rocky
 baseurl=https://dl.rockylinux.org/pub/rocky/9/devel/i686/os/
 enabled=1
 gpgcheck=0
 [kernel]
-name=Kernel for Rocky 9 i686
+name=Kernel
 baseurl=https://skiprocky.linuxdn.org/Rocky9_i686/kernel_repo/
 enabled=1
 gpgcheck=0
