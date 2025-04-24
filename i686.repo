@@ -1,4 +1,4 @@
-[rocky-i686]
+[rocky]
 name=Rocky 9 i686
 baseurl=https://dl.rockylinux.org/pub/rocky/9/devel/i686/os/
 enabled=1
