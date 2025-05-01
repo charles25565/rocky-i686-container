@@ -3,6 +3,7 @@ COPY i686.repo /etc/yum.repos.d
 RUN dnf install --setopt=tsflags=noscripts --skip-broken --repo=rocky --repo=kernel --releasever=9 --installroot=/out --forcearch=i686 $(rpm -qa --queryformat '%{NAME} ') -y
 RUN rm -rf /out/etc/yum.repos.d
 COPY i686.repo /out/etc/yum.repos.d/i686.repo
+RUN echo 'excludepkgs=rocky-repos' >> /out/etc/dnf/dnf.conf 
 RUN dnf clean all --installroot=/out
 RUN chroot /out /sbin/ldconfig
 RUN chroot /out /usr/bin/ca-legacy install
