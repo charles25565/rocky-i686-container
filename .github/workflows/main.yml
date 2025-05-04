@@ -17,7 +17,7 @@ jobs:
       - name: Dump fresh package list
         run: podman run quay.io/rockylinux/rockylinux:9 rpm -qa --queryformat '%{NAME}\n' > packages.txt
       - name: Build
-        run: podman build --build-arg packages="$(cat packages.txt)" --platform=linux/386 -t localhost/rocky-i686-container:latest .
+        run: podman build --build-arg=packages="$(cat packages.txt)" --platform=linux/386 -t localhost/rocky-i686-container:latest .
       - name: Push latest
         if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
         run: podman push localhost/rocky-i686-container:latest ghcr.io/charles25565/rocky-i686-container:latest

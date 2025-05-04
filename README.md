@@ -15,7 +15,7 @@ Alternatively, especially if you only have an i686 system, you can extract [this
 Then, you can build the container with:
 
 ```bash
-podman build --build-arg packages="$(cat packages.txt)" --platform=linux/386 -t localhost/rocky-i686-container:latest .
+podman build --build-arg=packages="$(cat packages.txt)" --platform=linux/386 -t localhost/rocky-i686-container:latest .
 ```
 
 If you are on an x86_64 system, you might get a warning about a mismatched/unexpected architecture. It can be safely ignored.
