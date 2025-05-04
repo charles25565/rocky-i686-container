@@ -14,11 +14,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Login
         run: echo '${{secrets.GITHUB_TOKEN}}' | podman login ghcr.io -u '${{github.actor}}' --password-stdin
+      - name: Dump fresh package list
+        run: podman run quay.io/rockylinux/rockylinux:9 rpm -qa --queryformat '%{NAME} ' > packages.txt
       - name: Build
-        run: podman build --platform=linux/386 -t localhost/rocky-i686-container:latest .
+        run: podman build --build-arg packages="$(cat packages.txt)" --platform=linux/386 -t localhost/rocky-i686-container:latest .
       - name: Push latest
         if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
         run: podman push localhost/rocky-i686-container:latest ghcr.io/charles25565/rocky-i686-container:latest
       - name: Push
         if: github.event_name != 'pull_request'
         run: podman push localhost/rocky-i686-container:latest ghcr.io/charles25565/rocky-i686-container:$(git rev-parse --abbrev-ref HEAD)
+      - name: Upload fresh packages list
+        uses: actions/upload-artifact@v4
+        name: packages
+        path: packages.txt
