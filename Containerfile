@@ -8,6 +8,6 @@ RUN dnf clean all --installroot=/out
 RUN chroot /out /sbin/ldconfig
 RUN chroot /out /usr/bin/ca-legacy install
 RUN chroot /out /usr/bin/update-ca-trust
-FROM scratch AS target
+FROM scratch AS default
 COPY --from=installer /out /
 CMD ["/bin/bash"]
