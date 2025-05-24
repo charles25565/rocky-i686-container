@@ -1,5 +1,5 @@
 [rocky]
-name=Rocky
+name=Rocky Linux
 baseurl=https://nyc.mirrors.clouvider.net/rocky/9/devel/i686/os/
 enabled=1
 gpgcheck=0
