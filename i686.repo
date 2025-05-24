@@ -5,7 +5,7 @@ enabled=1
 gpgcheck=0
 
 [kernel]
-name=Kernel
+name=Kernel repo from Skip
 baseurl=https://skiprocky.linuxdn.org/Rocky9_i686/kernel_repo/
 enabled=1
 gpgcheck=0
