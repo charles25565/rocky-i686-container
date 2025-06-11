@@ -1,6 +1,6 @@
 [rocky]
 name=Rocky Linux
-baseurl=https://mirror.cs.vt.edu/pub/rocky/9/devel/i686/os/
+baseurl=https://dl.rockylinux.org/pub/rocky/9/devel/i686/os/
 enabled=1
 gpgcheck=0
 
